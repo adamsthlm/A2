@@ -12,13 +12,13 @@ namespace A2
     class WholeNumbersForAdd
     {
 
-        // int number;
+        int result;
         //public void-method that preforms the whole process
         public void Start()
         {
             // Call the method which writes the program info, title, etc.
             WriteProgramInfo();
-            ReadInput(WriteProgramInfo());
+            result = ReadInput(WriteProgramInfo());
             SumNumber();
             ShowResults();
             Console.ReadLine();
@@ -26,7 +26,8 @@ namespace A2
 
         private void ShowResults()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(result);
+
         }
 
         /// <summary>
