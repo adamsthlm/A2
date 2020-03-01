@@ -12,13 +12,15 @@ namespace A2
     class WholeNumbersForAdd
     {
 
-        int result;
+        private int sum;
+        private int numOfInput;
+
         //public void-method that preforms the whole process
         public void Start()
         {
             // Call the method which writes the program info, title, etc.
             WriteProgramInfo();
-            result = ReadInput(WriteProgramInfo());
+            ReadInput();
             SumNumber();
             ShowResults();
             Console.ReadLine();
@@ -26,7 +28,12 @@ namespace A2
 
         private void ShowResults()
         {
-            Console.WriteLine(result);
+
+            // prints the result to the console window
+            Console.WriteLine("\n----------------------------");
+
+            Console.WriteLine("The sum is \t{0}", sum);
+
 
         }
 
@@ -35,47 +42,47 @@ namespace A2
         /// </summary>
         /// <returns>Sum of numbers chosen</returns>
 
-        private long SumNumber()
+        private void SumNumber()
         {
-            throw new NotImplementedException();
+            //Local variables
+            // int index;
+            // int num = 0;
+
+            for (int i = 0; i < numOfInput; i++)
+            {
+                Console.WriteLine("\nEnter number " + i  + " :");
+                sum += int.Parse(Console.ReadLine());
+
+
+            }
         }
+
+
+        private int userInput;
+        private bool keyOk;
+
+        private void ReadInput()
+        {
+            // determin how many numbers there are to bed added
+            Console.WriteLine("\nNumber of values to be added? ");
+            numOfInput = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+        }
+
 
         /// <summary>
-        /// ReadInput reads a key from user and evaluate it. If its a number return it else make
-        /// user try again
-        /// then summs the numbers and returns them.
+        /// Writes programinfo to console
         /// </summary>
-        private bool keyOk; // manage ReadInput while loop
-        private int userInput;
-
-        private int ReadInput(int sizeOf)
-        {
-            int x = 0;
-            int[] theNumbers = new int[sizeOf];
-            for (int i = WriteProgramInfo(); i < WriteProgramInfo(); i++)
-            {
-
-                theNumbers[i] = Input();
-            }
-            for (int i = WriteProgramInfo(); i < WriteProgramInfo(); i++)
-            {
-                x += theNumbers[i];
-            }
-
-
-            return x;
-        }
-
-        public int WriteProgramInfo()
+        public void WriteProgramInfo()
         {
             Console.WriteLine();
             Console.Write("\n***** Summation of whole numbers ******");
             Console.Write("\n       using a for statement \n\n----------------------------------------");
-            Console.Write("\nHow many numbers would you like to add? ");
-            int numberOfNumbersToAdd = int.Parse(Console.ReadLine());
-            return numberOfNumbersToAdd;
 
         }
+
+
         private int Input()
         {
             while (keyOk == false)
@@ -83,6 +90,7 @@ namespace A2
                 try
                 {
                     userInput = int.Parse(Console.ReadLine());
+                    keyOk = true;
                     return userInput;
                 }
                 catch (FormatException)
