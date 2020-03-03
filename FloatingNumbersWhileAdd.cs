@@ -12,6 +12,7 @@ namespace A2
     public class FloatingNumbersWhileAdd
     {
         private int input;
+        double sum;
 
         //Declare a variable (aka field, instancevariable or attribute
         public void Start()
@@ -25,7 +26,7 @@ namespace A2
 
         private void ShowResults()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The sum is : " + sum);
         }
 
         // 
@@ -38,11 +39,20 @@ namespace A2
             while (!done)
             {
                 input = int.Parse(Console.ReadLine());
+                if (input.Equals(0))
+                {
+                    done = true;
+                }
+                else
+                {
+
+                    sum += input;
+                }
 
             }
+            Console.WriteLine("The sum is: " + sum);
 
 
-            // throw new NotImplementedException();
         }
 
         // Write welcome text to user

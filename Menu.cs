@@ -35,8 +35,8 @@ namespace A2
 						}
 					case 2: //menu item 2 
 						{
-							Console.Write(" ** You have pressed 2 ** NOT implemented yet");
-							Console.ReadLine();
+							FloatingNumbersWhileAdd fnwa_object = new FloatingNumbersWhileAdd();
+							fnwa_object.Start();
 							break;
 						}
 					case 3: //menu item 3
