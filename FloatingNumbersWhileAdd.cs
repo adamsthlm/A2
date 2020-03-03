@@ -9,9 +9,13 @@ using System;
 
 namespace A2
 {
+    /// <summary>
+    /// class FloatingNumbersWhileAdd, reads numbers from user and adds them using a while-loop
+    /// untill user presses 0 and the program returns to the menu
+    /// </summary>
     public class FloatingNumbersWhileAdd
     {
-        private int input;
+        private double input;
         double sum;
 
         //Declare a variable (aka field, instancevariable or attribute
@@ -24,12 +28,18 @@ namespace A2
 
         }
 
+        /// <summary>
+        /// displays the sum to the user
+        /// </summary>
         private void ShowResults()
         {
             Console.WriteLine("The sum is : " + sum);
         }
 
-        // 
+        /// <summary>
+        /// this is where the magic happens, the while loop wont stop untill 
+        /// the user presses 0
+        /// </summary>
         private void ReadInputAndSumNumbers()
         {
             // read number. If the valu is give as 0, end the iteration
@@ -38,7 +48,10 @@ namespace A2
 
             while (!done)
             {
-                input = int.Parse(Console.ReadLine());
+
+                // here its possibel to 
+                Console.Write("Write an amount to sum or zero to finish...");
+                input = double.Parse(Console.ReadLine());
                 if (input.Equals(0))
                 {
                     done = true;
@@ -56,14 +69,19 @@ namespace A2
 
         }
 
-        // Write welcome text to user
+        /// <summary>
+        /// a short pressentation of what the program is doing
+        /// </summary>
         private void WriteProgramInfo()
         {
             Console.WriteLine();
             Console.Write("\n***** Summation of real numbers ******");
             Console.Write("\n       using a while loop \n\n----------" +
-                "------------------------------" + "\n Write 0 to finish!");
+                "------------------------------");
+            Console.WriteLine();
         }
+
+
         private double ReadInput()
         {
             Console.Write("Write an amount to sum or zero to finish...");
