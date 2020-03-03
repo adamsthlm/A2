@@ -1,9 +1,18 @@
-﻿using System;
+﻿/*
+Denna fil har skapats som en del av kursen [C# I] på Malmö Universitet 2020
+Namn: Carl-Adam Berglund
+e-mail: ak7764@mau.se
+*/
+
+
+using System;
 
 namespace A2
 {
     public class FloatingNumbersWhileAdd
     {
+        private int input;
+
         //Declare a variable (aka field, instancevariable or attribute
         public void Start()
         {
@@ -28,24 +37,28 @@ namespace A2
 
             while (!done)
             {
-                // ADD YOUR CODE HERE
+                input = int.Parse(Console.ReadLine());
+
             }
 
-            
-           // throw new NotImplementedException();
+
+            // throw new NotImplementedException();
         }
 
         // Write welcome text to user
         private void WriteProgramInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine();
+            Console.Write("\n***** Summation of real numbers ******");
+            Console.Write("\n       using a while loop \n\n----------" +
+                "------------------------------" + "\n Write 0 to finish!");
         }
         private double ReadInput()
         {
             Console.Write("Write an amount to sum or zero to finish...");
             double num = double.Parse(Console.ReadLine());
             return num;
-            
+
         }
     } // end class
 } // end namespace
