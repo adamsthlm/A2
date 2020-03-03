@@ -9,6 +9,9 @@ using System;
 
 namespace A2
 {
+    /// <summary>
+    /// class WholeNumberForAdd, reads input from user and present the sum using a for-loop
+    /// </summary>
     class WholeNumbersForAdd
     {
 
@@ -26,6 +29,10 @@ namespace A2
             Console.ReadLine();
         }
 
+
+        /// <summary>
+        /// Presents the result to the user
+        /// </summary>
         private void ShowResults()
         {
 
@@ -38,19 +45,17 @@ namespace A2
         }
 
         /// <summary>
-        /// Nästa metod att inplementera
+        /// This method reads and adds the number to variable sum
         /// </summary>
         /// <returns>Sum of numbers chosen</returns>
 
         private void SumNumber()
         {
-            //Local variables
-            // int index;
-            // int num = 0;
 
             for (int i = 0; i < numOfInput; i++)
             {
-                Console.WriteLine("\nEnter number " + i  + " :");
+                Console.WriteLine("\nEnter number " + i + " :");
+
                 sum += int.Parse(Console.ReadLine());
 
 
@@ -64,9 +69,14 @@ namespace A2
         private void ReadInput()
         {
             // determin how many numbers there are to bed added
+
             Console.WriteLine("\nNumber of values to be added? ");
-            numOfInput = int.Parse(Console.ReadLine());
-            Console.WriteLine();
+            numOfInput = Input();
+            if (numOfInput == -1)
+            {
+                Console.WriteLine("You have made an illegal input, please try again...");
+                ReadInput();
+            }
 
         }
 
@@ -82,6 +92,11 @@ namespace A2
 
         }
 
+        /// <summary>
+        /// Input checks if valid int else make notice to user
+        /// If I get time i will extract this method and make it a class to use for the VG grade
+        /// </summary>
+        /// <returns>Valid user input</returns>
 
         private int Input()
         {

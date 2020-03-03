@@ -19,8 +19,13 @@ namespace A2
 			{
 				WriteMenuText(); // show the menu
 								 // Read user choice
-				choice = int.Parse(Console.ReadLine());
+				try
+				{
+					choice = int.Parse(Console.ReadLine());
 
+				}
+				catch (FormatException) { }
+				
 
 				// Depending on the value fo the choice, create an
 				// instance of the class displayed on the menu
@@ -35,8 +40,8 @@ namespace A2
 						}
 					case 2: //menu item 2 
 						{
-							Console.Write(" ** You have pressed 2 ** NOT implemented yet");
-							Console.ReadLine();
+							FloatingNumbersWhileAdd fnwa_object = new FloatingNumbersWhileAdd();
+							fnwa_object.Start();
 							break;
 						}
 					case 3: //menu item 3
