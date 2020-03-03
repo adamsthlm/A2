@@ -19,8 +19,13 @@ namespace A2
 			{
 				WriteMenuText(); // show the menu
 								 // Read user choice
-				choice = int.Parse(Console.ReadLine());
+				try
+				{
+					choice = int.Parse(Console.ReadLine());
 
+				}
+				catch (FormatException) { }
+				
 
 				// Depending on the value fo the choice, create an
 				// instance of the class displayed on the menu

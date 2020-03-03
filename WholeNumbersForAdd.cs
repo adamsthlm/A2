@@ -50,7 +50,8 @@ namespace A2
 
             for (int i = 0; i < numOfInput; i++)
             {
-                Console.WriteLine("\nEnter number " + i  + " :");
+                Console.WriteLine("\nEnter number " + i + " :");
+
                 sum += int.Parse(Console.ReadLine());
 
 
@@ -64,10 +65,15 @@ namespace A2
         private void ReadInput()
         {
             // determin how many numbers there are to bed added
-            Console.WriteLine("\nNumber of values to be added? ");
-            numOfInput = int.Parse(Console.ReadLine());
-            Console.WriteLine();
 
+            Console.WriteLine("\nNumber of values to be added? ");
+            numOfInput = Input();
+            if (numOfInput == -1)
+            {
+                Console.WriteLine("You have made an illegal input, please try again...");
+                ReadInput();
+            }
+          
         }
 
 

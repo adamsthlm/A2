@@ -47,10 +47,11 @@ namespace A2
                 {
 
                     sum += input;
+                    ShowResults();
+
                 }
 
             }
-            Console.WriteLine("The sum is: " + sum);
 
 
         }
@@ -72,3 +73,5 @@ namespace A2
         }
     } // end class
 } // end namespace
+
+
