@@ -78,7 +78,7 @@ namespace A2
             Console.Write("\n***** Summation of real numbers ******");
             Console.Write("\n       using a while loop \n\n----------" +
                 "------------------------------");
-            Console.WriteLine();
+            Console.WriteLine(); 
         }
 
 
