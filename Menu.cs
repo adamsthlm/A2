@@ -62,7 +62,6 @@ namespace A2
 						}
 					case 0: //menu item 0
 						{
-							Console.Write(" ** You have pressed 0 ** NOT implemented yet");
 							break;
 						}
 					default:
