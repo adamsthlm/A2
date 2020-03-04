@@ -38,15 +38,16 @@ namespace A2
 							sumObj.Start();
 							break;
 						}
-					case 2: //menu item 2 
+					case 2: //menu item 2 (a while-loop)
 						{
 							FloatingNumbersWhileAdd fnwa_object = new FloatingNumbersWhileAdd();
 							fnwa_object.Start();
 							break;
 						}
-					case 3: //menu item 3
+					case 3: //menu no help class with while-loop instansiated here! 2020-03-04
 						{
-							Console.Write(" ** You have pressed 3 ** NOT implemented yet");
+							CurrencyConverter curConv = new CurrencyConverter();
+							curConv.Start();
 							break;
 						}
 					case 4: //menu item 4
